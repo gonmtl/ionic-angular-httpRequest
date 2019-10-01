@@ -1,15 +1,27 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      Http Request / Get users
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div *ngFor='let user of users'>
-    <img [src]="user.picture.medium">
-    <h2>{{ user.name.first | uppercase }}</h2>
-    <p>{{ user.email }}</p>
-</div>
+
+<ion-grid fixed>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size-md="6">
+        <ion-item *ngFor='let user of users'>
+          <ion-avatar slot="start">
+              <img [src]="user.picture.medium">
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ user.name.first}}</h2>
+            <h3>{{ user.email }}</h3>
+          </ion-label>
+        </ion-item>
+    </ion-col>    
+  </ion-row>      
+</ion-grid>
+
 </ion-content>
